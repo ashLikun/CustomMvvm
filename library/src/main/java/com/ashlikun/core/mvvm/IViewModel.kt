@@ -1,6 +1,5 @@
-package com.ashlikun.core.factory
+package com.ashlikun.core.mvvm
 
-import com.ashlikun.core.BaseViewModel
 import java.lang.annotation.Inherited
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
@@ -15,4 +14,4 @@ import kotlin.reflect.KClass
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
-annotation class ViewModel(val value: KClass<out BaseViewModel>)
+annotation class IViewModel(val value: KClass<out BaseViewModel>)

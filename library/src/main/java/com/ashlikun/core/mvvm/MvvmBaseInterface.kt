@@ -1,4 +1,6 @@
-package com.ashlikun.core
+package com.ashlikun.core.mvvm
+
+import com.ashlikun.core.mvvm.BaseViewModel
 
 /**
  * 作者　　: 李坤

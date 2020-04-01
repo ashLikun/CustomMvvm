@@ -1,19 +1,18 @@
 package com.ashlikun.core.simple
 
-import android.util.Log
-
-import com.ashlikun.core.fragment.BaseMvvmFragment
+import com.ashlikun.core.mvvm.BaseMvvmFragment
+import com.ashlikun.utils.other.LogUtils
 
 class MainFragment : BaseMvvmFragment<MainViewModel2>() {
 
 
     override fun getLayoutId(): Int {
-        Log.e("MainFragment", "getLayoutId")
+        LogUtils.e("getLayoutId")
         return R.layout.activity_main
 
     }
 
     override fun initView() {
-        Log.e("MainFragment", "initView")
+        LogUtils.e("initView")
     }
 }

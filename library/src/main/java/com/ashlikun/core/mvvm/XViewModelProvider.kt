@@ -1,4 +1,4 @@
-package com.ashlikun.core
+package com.ashlikun.core.mvvm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

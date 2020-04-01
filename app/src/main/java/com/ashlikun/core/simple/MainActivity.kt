@@ -2,8 +2,7 @@ package com.ashlikun.core.simple
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import com.ashlikun.core.activity.BaseMvvmActivity
+import com.ashlikun.core.mvvm.BaseMvvmActivity
 import com.ashlikun.utils.other.LogUtils
 
 class MainActivity : BaseMvvmActivity<MainViewModel>() {
@@ -13,8 +12,7 @@ class MainActivity : BaseMvvmActivity<MainViewModel>() {
     }
 
     override fun getLayoutId(): Int {
-        LogUtils.e("initView")
-        Log.e("MainActivity", "getLayoutId")
+        LogUtils.e("getLayoutId")
         return R.layout.activity_main
     }
 

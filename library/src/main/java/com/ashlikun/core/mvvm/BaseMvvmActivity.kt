@@ -1,15 +1,10 @@
-package com.ashlikun.core.activity
+package com.ashlikun.core.mvvm
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.ashlikun.core.BaseViewModel
-import com.ashlikun.core.MvvmBaseInterface
-import com.ashlikun.core.XViewModelProvider
-import com.ashlikun.core.factory.ViewModelFactoryImp
+import com.ashlikun.core.activity.BaseActivity
 
 
 /**
@@ -33,7 +28,6 @@ open abstract class BaseMvvmActivity<VM : BaseViewModel>
     override fun onCreate(savedInstanceState: Bundle?) {
         viewModel.dataInit
         super.onCreate(savedInstanceState)
-        viewModel.onCreate()
     }
 
     override fun parseIntent(intent: Intent?) {

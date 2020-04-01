@@ -1,6 +1,6 @@
 package com.ashlikun.core.simple
 
-import com.ashlikun.core.BaseViewModel
+import com.ashlikun.core.mvvm.BaseViewModel
 import com.ashlikun.utils.other.LogUtils
 
 /**
