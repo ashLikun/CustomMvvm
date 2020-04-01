@@ -10,7 +10,6 @@ import com.ashlikun.core.listener.OnDispatcherMessage
 import com.ashlikun.loadswitch.ContextData
 import com.ashlikun.okhttputils.http.OkHttpUtils
 import com.ashlikun.utils.ui.ActivityManager
-import java.util.concurrent.ConcurrentHashMap
 
 /**
  * 作者　　: 李坤
@@ -20,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap
  * 功能介绍：VM 的基础,自动感知生命周期
  */
 open abstract class BaseViewModel : ViewModel(), LifecycleObserver, OnDispatcherMessage {
-
+    //LiveData创建
     val lifeDataProvider: LiveDataProvider by lazy {
         LiveDataProvider()
     }
