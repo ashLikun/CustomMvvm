@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.ashlikun.core.listener.IBaseWindow
 import java.lang.reflect.ParameterizedType
+import kotlin.reflect.KClass
 
 /**
  * @author　　: 李坤
@@ -43,7 +44,8 @@ open class ViewModelFactoryImp(var mvvmBaseInterface: MvvmBaseInterface? = null)
         /**
          * 获取ViewModel注解
          */
-        fun <VM : BaseViewModel> getViewModelAnnotation(viewClazz: Class<*>) = viewClazz.getAnnotation(IViewModel::class.java)?.value as Class<VM>?
+        fun <VM : BaseViewModel> getViewModelAnnotation(viewClazz: Class<*>) =
+                (viewClazz.getAnnotation(IViewModel::class.java)?.value as KClass<VM>?)?.java
 
         /**
          * 获取父类的泛型BaseViewModel
@@ -51,8 +53,8 @@ open class ViewModelFactoryImp(var mvvmBaseInterface: MvvmBaseInterface? = null)
         fun <VM : BaseViewModel> getViewModelParameterizedType(viewClazz: Class<*>): Class<VM>? {
             if (viewClazz.genericSuperclass is ParameterizedType && (viewClazz.genericSuperclass as ParameterizedType).actualTypeArguments.isNotEmpty()) {
                 val modelClass2 = (viewClazz.genericSuperclass as ParameterizedType).actualTypeArguments[0]
-                if (modelClass2 is Class<*>) {
-                    return modelClass2 as Class<VM>
+                if (modelClass2 is Class<*>?) {
+                    return modelClass2 as Class<VM>?
                 }
             }
             return null

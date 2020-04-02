@@ -3,8 +3,10 @@ package com.ashlikun.core.simple
 import android.content.Intent
 import android.os.Bundle
 import com.ashlikun.core.mvvm.BaseMvvmActivity
+import com.ashlikun.core.mvvm.IViewModel
 import com.ashlikun.utils.other.LogUtils
 
+@IViewModel(MainViewModel::class)
 class MainActivity : BaseMvvmActivity<MainViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         LogUtils.e("onCreate")
