@@ -30,6 +30,16 @@ open abstract class BaseMvvmActivity<VM : BaseViewModel>
         super.onCreate(savedInstanceState)
     }
 
+    override fun initLoadSwitch() {
+        super.initLoadSwitch()
+        viewModel.loadSwitchService = switchService
+        viewModelProvider.forEach<ViewModel> {
+            if (it is BaseViewModel) {
+                it.loadSwitchService = switchService
+            }
+        }
+    }
+
     override fun parseIntent(intent: Intent?) {
         super.parseIntent(intent)
         if (intent != null) {

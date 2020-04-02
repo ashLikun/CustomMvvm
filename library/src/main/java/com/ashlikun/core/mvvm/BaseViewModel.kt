@@ -8,6 +8,7 @@ import androidx.lifecycle.*
 import androidx.lifecycle.ViewModel
 import com.ashlikun.core.listener.OnDispatcherMessage
 import com.ashlikun.loadswitch.ContextData
+import com.ashlikun.loadswitch.LoadSwitchService
 import com.ashlikun.okhttputils.http.OkHttpUtils
 import com.ashlikun.utils.ui.ActivityManager
 
@@ -26,6 +27,9 @@ open abstract class BaseViewModel : ViewModel(), LifecycleObserver, OnDispatcher
 
     //上下文
     var context: Context? = null
+
+    //布局切换
+    var loadSwitchService: LoadSwitchService? = null
 
     //数据是否初始化过
     var dataInit = false

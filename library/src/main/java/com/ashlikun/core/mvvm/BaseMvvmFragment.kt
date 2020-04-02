@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.ashlikun.core.fragment.BaseFragment
+import com.ashlikun.loadswitch.LoadSwitchService
 
 
 /**
@@ -41,6 +42,16 @@ open abstract class BaseMvvmFragment<VM : BaseViewModel>
         parseIntent(intent)
     }
 
+    override fun initLoadSwitch() {
+        super.initLoadSwitch()
+        viewModel.loadSwitchService = switchService
+        viewModelProvider.forEach<ViewModel> {
+            if (it is BaseViewModel) {
+                it.loadSwitchService = switchService
+            }
+        }
+    }
+
     override fun setArguments(args: Bundle?) {
         super.setArguments(args)
         if (isAdded) {
@@ -52,9 +63,6 @@ open abstract class BaseMvvmFragment<VM : BaseViewModel>
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
 
     fun parseIntent(intent: Intent) {
         viewModel.parseIntent(intent!!)
