@@ -21,7 +21,7 @@ import com.ashlikun.utils.ui.ActivityManager
  */
 open abstract class BaseViewModel : ViewModel(), LifecycleObserver, OnDispatcherMessage {
     //VM是否Cleared
-    var mCleared = false
+    var isCleared = false
         private set
 
     //LiveData创建
@@ -142,7 +142,7 @@ open abstract class BaseViewModel : ViewModel(), LifecycleObserver, OnDispatcher
 
     override fun onCleared() {
         super.onCleared()
-        mCleared = true
+        isCleared = true
         lifecycleOwner = null
         context = null
         loadSwitchService = null
